@@ -48,7 +48,7 @@ class Generate_Scaffold
 
 		$subfolder = trim($subfolder, '/');
 
-		if ( ! is_dir(\Package::exists('oil').'views/'.static::$view_subdir.$subfolder))
+		if ( ! is_dir(\Package::exists('oil').'views/'.static::$view_subdir.$subfolder) and ! is_dir(APPPATH . 'views/' . static::$view_subdir.$subfolder))
 		{
 			throw new Exception('The subfolder for admin templates does not exist or is spelled wrong: '.$subfolder.' ');
 		}
